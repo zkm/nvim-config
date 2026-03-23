@@ -1,0 +1,30 @@
+# Plugin directory (lazy.nvim installs here — don't commit plugins)
+lazy-lock.json        # optional: commit this if you want reproducible installs
+plugin/
+
+# Lazy.nvim data
+.lazy/
+
+# LSP & tool caches
+.lsp/
+
+# Neovim internal state (lives in ~/.local/share/nvim, but just in case)
+swap/
+backup/
+undo/
+
+# Logs
+*.log
+
+# Compiled Lua (luac output)
+*.luac
+
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Secrets / sensitive configs (if you ever store API keys in config)
+.env
+secrets.lua
+**/secrets.lua
+pack/
