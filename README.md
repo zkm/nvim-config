@@ -2,6 +2,16 @@
 
 My personal Neovim configuration for Linux — full-featured IDE setup using lazy.nvim.
 
+![Neovim screenshot](./Screenshot.png)
+
+## Defaults and Goals
+- Keep the setup small and understandable while still covering daily IDE needs.
+- Use sensible editing defaults: line numbers, relative numbers, true color, 2-space indentation, and mouse support.
+- Favor fast navigation with Neo-tree for project browsing and Telescope for fuzzy finding.
+- Keep language support practical with LSP, Treesitter, Mason, and nvim-cmp.
+- Preserve a smooth completion workflow by keeping `Tab` for `nvim-cmp` and moving GitHub Copilot accept to `<C-l>`.
+- Stick to a clean, consistent UI with Tokyo Night and lualine instead of heavy visual customization.
+
 ## Requirements
 - Neovim >= 0.9
 - Git
@@ -9,9 +19,35 @@ My personal Neovim configuration for Linux — full-featured IDE setup using laz
 - `ripgrep` for Telescope live grep
 
 ## Install
+SSH:
+
+```bash
 git clone git@github.com:zkm/nvim-config.git ~/.config/nvim
+```
+
+HTTPS:
+
+```bash
+git clone https://github.com/zkm/nvim-config.git ~/.config/nvim
+```
+
+## Quick Start
+```bash
+nvim
+```
+
+On first launch, lazy.nvim will bootstrap itself and install the configured plugins.
+
+Open a file to get syntax highlighting, completion, and LSP features for supported languages.
+
+If you open Neovim with a directory path, Neo-tree opens automatically:
+
+```bash
+nvim ~/.config/nvim
+```
 
 ## Structure
+```text
 ~/.config/nvim/
 ├── init.lua
 ├── lazy-lock.json
@@ -26,6 +62,23 @@ git clone git@github.com:zkm/nvim-config.git ~/.config/nvim
         ├── telescope.lua
         ├── theme.lua
         └── treesitter.lua
+```
+
+## Keymaps
+- `Space` — leader key
+- `<leader>e` — toggle Neo-tree
+- `<C-Space>` — trigger completion menu
+- `<CR>` — confirm selected completion item
+- `<Tab>` / `<S-Tab>` — navigate completion items
+- `<C-l>` — accept GitHub Copilot suggestion
+
+## Troubleshooting
+- Icons look wrong or are missing: install a Nerd Font and configure your terminal to use it.
+- `:Telescope live_grep` fails: make sure `ripgrep` is installed and available in `PATH`.
+- Plugins do not install on first launch: confirm `git` is installed and that Neovim has network access, then restart Neovim.
+- LSP features are missing for a language: run `:Mason` and verify the server is installed for one of the configured languages.
+- Treesitter highlighting is missing or outdated: run `:TSUpdate` inside Neovim.
+- Opening a folder does not show Neo-tree: start Neovim with a directory path such as `nvim .` or use `<leader>e` after startup.
 
 ## Plugins
 
@@ -62,3 +115,13 @@ git clone git@github.com:zkm/nvim-config.git ~/.config/nvim
 - `gopls` — Go
 - `elixirls` — Elixir
 - `rust_analyzer` — Rust
+- `vtsls` — JavaScript, TypeScript, React, and Vue TypeScript integration
+- `eslint` — JavaScript and TypeScript linting
+- `vue_ls` — Vue
+- `intelephense` — PHP
+- `tailwindcss` — Tailwind CSS class completion and validation
+- `html` — HTML language support
+- `cssls` — CSS, SCSS, and Less
+- `jsonls` — JSON and JSONC config files
+- `emmet_language_server` — HTML and CSS expansion helpers
+- `svelte` — Svelte
