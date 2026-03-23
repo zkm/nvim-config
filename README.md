@@ -119,9 +119,11 @@ nvim ~/.config/nvim
 - `eslint` — JavaScript and TypeScript linting
 - `vue_ls` — Vue
 - `intelephense` — PHP
-- `tailwindcss` — Tailwind CSS class completion and validation
-- `html` — HTML language support
-- `cssls` — CSS, SCSS, and Less
-- `jsonls` — JSON and JSONC config files
-- `emmet_language_server` — HTML and CSS expansion helpers
-- `svelte` — Svelte
+
+### Formatters and Linters (via mason-tool-installer)
+- `stylua` — Lua formatter
+- `prettierd` — Prettier daemon for fast JS/TS/JSON/CSS/HTML/Markdown formatting
+- `selene` — Lua linter
+- `eslint_d` — ESLint daemon for fast JavaScript and TypeScript linting
+
+These tools are installed from [lua/plugins/mason-tools.lua](lua/plugins/mason-tools.lua) on startup.
