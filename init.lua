@@ -4,9 +4,11 @@ vim.g.mapleader = " "
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git", "clone", "--filter=blob:none",
+    "git",
+    "clone",
+    "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    lazypath
+    lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
@@ -18,7 +20,7 @@ vim.opt.termguicolors = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Auto-open Neo-tree when opening a directory
 vim.cmd([[autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | exe 'Neotree' | endif]])
