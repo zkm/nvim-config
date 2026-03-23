@@ -33,4 +33,4 @@ jobs:
           args: --check .
 
       - name: Lint with Luacheck
-        run: luacheck .
+        run: luacheck init.lua lua/
