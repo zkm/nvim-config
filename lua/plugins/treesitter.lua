@@ -1,20 +1,33 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "lua",
-        "javascript",
-        "typescript",
-        "elixir",
-        "go",
-        "rust",
-        "html",
-        "css",
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
+    local languages = {
+      "lua",
+      "javascript",
+      "typescript",
+      "elixir",
+      "go",
+      "rust",
+      "html",
+      "css",
+    }
+
+    local ok_configs, configs = pcall(require, "nvim-treesitter.configs")
+    if ok_configs then
+      configs.setup({
+        ensure_installed = languages,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+      return
+    end
+
+    local ok_treesitter, treesitter = pcall(require, "nvim-treesitter")
+    if ok_treesitter then
+      treesitter.setup({})
+      treesitter.install(languages)
+    end
   end,
 }
