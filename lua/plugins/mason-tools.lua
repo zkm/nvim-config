@@ -11,7 +11,7 @@ return {
       },
       run_on_start = true,
       auto_update = false,
-      start_delay= 3000, -- 3 second delay
+      start_delay = 3000, -- 3 second delay
     })
   end,
 }
