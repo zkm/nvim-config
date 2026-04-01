@@ -45,6 +45,7 @@ return {
       eslint = {},
       vue_ls = {},
       intelephense = {},
+      stylelint_lsp = {},
     }
 
     mason.setup()
