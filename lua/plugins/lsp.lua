@@ -45,8 +45,9 @@ return {
       eslint = {},
       vue_ls = {},
       intelephense = {},
-      stylelint_lsp = {},
     }
+
+    local has_npm = vim.fn.executable("npm") == 1
 
     mason.setup()
     mason_lspconfig.setup({
@@ -71,6 +72,14 @@ return {
       if resolved then
         lspconfig[resolved].setup(opts)
       end
+    end
+
+    -- Configure Stylelint LSP explicitly, but do not auto-install it via mason-lspconfig
+    -- to avoid picking the deprecated stylelint-lsp package mapping.
+    if has_npm and configs.stylelint_lsp then
+      lspconfig.stylelint_lsp.setup({
+        capabilities = vim.tbl_deep_extend("force", {}, capabilities),
+      })
     end
   end,
 }
