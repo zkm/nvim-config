@@ -24,3 +24,6 @@ Thumbs.db
 .env
 secrets.lua
 **/secrets.lua
+
+# Local editor-only settings
+.vscode/settings.json
