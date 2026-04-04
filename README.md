@@ -13,7 +13,7 @@ My personal Neovim configuration for Linux — full-featured IDE setup using laz
 - Stick to a clean, consistent UI with Tokyo Night and lualine instead of heavy visual customization.
 
 ## Requirements
-- Neovim >= 0.9
+- Neovim >= 0.11
 - Git
 - A [Nerd Font](https://www.nerdfonts.com/) for icons
 - `ripgrep` for Telescope live grep
