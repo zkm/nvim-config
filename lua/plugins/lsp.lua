@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  enabled = vim.fn.has("nvim-0.10") == 1,
   commit = "0ef64599b8aa0187ee5f6d92cb39c951f348f041",
   pin = true,
   dependencies = {
