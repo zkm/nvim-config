@@ -13,7 +13,7 @@ My personal Neovim configuration for Linux — full-featured IDE setup using laz
 - Stick to a clean, consistent UI with Tokyo Night and lualine instead of heavy visual customization.
 
 ## Requirements
-- Neovim >= 0.11
+- Neovim >= 0.8
 - Git
 - A [Nerd Font](https://www.nerdfonts.com/) for icons
 - `ripgrep` for Telescope live grep
@@ -115,9 +115,9 @@ nvim ~/.config/nvim
 - `gopls` — Go
 - `elixirls` — Elixir
 - `rust_analyzer` — Rust
-- `vtsls` — JavaScript, TypeScript, React, and Vue TypeScript integration
+- `tsserver` — JavaScript, TypeScript, React, and Vue TypeScript integration
 - `eslint` — JavaScript and TypeScript linting
-- `vue_ls` — Vue
+- `volar` — Vue
 - `intelephense` — PHP
 
 ### Formatters and Linters (via mason-tool-installer)

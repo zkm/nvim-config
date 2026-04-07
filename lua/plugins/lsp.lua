@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  version = "v0.1.9",
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -19,18 +20,13 @@ return {
       gopls = {},
       elixirls = {},
       rust_analyzer = {},
-      vtsls = {
-        settings = {
-          vtsls = {
-            tsserver = {
-              globalPlugins = {
-                {
-                  name = "@vue/typescript-plugin",
-                  location = vue_language_server_path,
-                  languages = { "vue" },
-                  configNamespace = "typescript",
-                },
-              },
+      tsserver = {
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vue_language_server_path,
+              languages = { "vue" },
             },
           },
         },
@@ -43,7 +39,7 @@ return {
         },
       },
       eslint = {},
-      vue_ls = {},
+      volar = {},
       intelephense = {},
     }
 
@@ -54,23 +50,10 @@ return {
       ensure_installed = vim.tbl_keys(servers),
     })
 
-    local function resolve_server(name)
-      if configs[name] then
-        return name
-      end
-
-      if name == "vue_ls" and configs.volar then
-        return "volar"
-      end
-
-      return nil
-    end
-
     for server, opts in pairs(servers) do
       opts.capabilities = vim.tbl_deep_extend("force", {}, capabilities, opts.capabilities or {})
-      local resolved = resolve_server(server)
-      if resolved then
-        lspconfig[resolved].setup(opts)
+      if configs[server] then
+        lspconfig[server].setup(opts)
       end
     end
 
