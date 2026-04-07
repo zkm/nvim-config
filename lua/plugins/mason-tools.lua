@@ -1,5 +1,6 @@
 return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
+  enabled = vim.fn.has("nvim-0.9") == 1,
   dependencies = { "williamboman/mason.nvim" },
   config = function()
     local ensure_installed = {
