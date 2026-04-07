@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
-  version = "v0.1.9",
+  commit = "0ef64599b8aa0187ee5f6d92cb39c951f348f041",
+  pin = true,
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",

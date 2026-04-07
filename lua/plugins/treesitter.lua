@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = "master",
+  commit = "b401b7423d18c78371c5ff1a5f8d3c14292b2047",
+  pin = true,
   build = ":TSUpdate",
   config = function()
     local languages = {
