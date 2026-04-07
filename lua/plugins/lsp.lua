@@ -13,7 +13,10 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
     local ok_lspconfig, lspconfig = pcall(require, "lspconfig")
     if not ok_lspconfig then
-      vim.notify("nvim-lspconfig is not compatible with this Neovim version yet; skipping LSP setup", vim.log.levels.WARN)
+      vim.notify(
+        "nvim-lspconfig is not compatible with this Neovim version yet; skipping LSP setup",
+        vim.log.levels.WARN
+      )
       return
     end
     local configs = require("lspconfig.configs")
