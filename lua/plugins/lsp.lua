@@ -10,7 +10,11 @@ return {
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
-    local lspconfig = require("lspconfig")
+    local ok_lspconfig, lspconfig = pcall(require, "lspconfig")
+    if not ok_lspconfig then
+      vim.notify("nvim-lspconfig is not compatible with this Neovim version yet; skipping LSP setup", vim.log.levels.WARN)
+      return
+    end
     local configs = require("lspconfig.configs")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local vue_language_server_path = vim.fn.stdpath("data")
