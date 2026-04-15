@@ -56,6 +56,7 @@ nvim ~/.config/nvim
         ├── init.lua
         ├── cmp.lua
         ├── copilot.lua
+        ├── icons.lua
         ├── lsp.lua
         ├── lualine.lua
         ├── neotree.lua
@@ -109,6 +110,7 @@ nvim ~/.config/nvim
 ### UI
 - [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) — colorscheme
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) — statusline
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) — file and UI icons
 
 ### LSP Language Servers (via Mason)
 - `lua_ls` — Lua
