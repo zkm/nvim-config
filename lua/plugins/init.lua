@@ -1,4 +1,5 @@
 return {
+  require("plugins.icons"),
   require("plugins.theme"),
   require("plugins.lualine"),
   require("plugins.neotree"),
