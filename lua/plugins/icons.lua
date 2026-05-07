@@ -5,7 +5,7 @@ return {
     strict = true,
     override_by_filename = {
       ["init.lua"] = {
-        icon = "",
+        icon = "",
         color = "#57A143",
         name = "NeovimConfig",
       },
