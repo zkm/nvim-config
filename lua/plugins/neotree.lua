@@ -8,10 +8,17 @@ return {
   },
   config = function()
     require("neo-tree").setup({
+      close_if_last_window = true,
+      window = { width = 30 },
       filesystem = {
         hijack_netrw_behavior = "open_default",
+        filtered_items = {
+          visible = false,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        },
+        follow_current_file = { enabled = true },
       },
     })
-    vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
   end,
 }

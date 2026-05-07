@@ -8,4 +8,11 @@ return {
   require("plugins.cmp"),
   require("plugins.copilot"),
   require("plugins.treesitter"),
+  require("plugins.whichkey"),
+  require("plugins.autopairs"),
+  require("plugins.comment"),
+  require("plugins.gitsigns"),
+  require("plugins.todo-comments"),
+  require("plugins.neoscroll"),
+  require("plugins.indent-blankline"),
 }
