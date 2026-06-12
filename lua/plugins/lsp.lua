@@ -11,6 +11,7 @@ return {
     local lspconfig = require("lspconfig")
     local configs = require("lspconfig.configs")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local has_npm = vim.fn.executable("npm") == 1
     local vue_language_server_path = vim.fn.stdpath("data")
       .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
@@ -19,7 +20,10 @@ return {
       gopls = {},
       elixirls = {},
       rust_analyzer = {},
-      vtsls = {
+    }
+
+    if has_npm then
+      servers.vtsls = {
         settings = {
           vtsls = {
             tsserver = {
@@ -41,13 +45,11 @@ return {
           "typescriptreact",
           "vue",
         },
-      },
-      eslint = {},
-      vue_ls = {},
-      intelephense = {},
-    }
-
-    local has_npm = vim.fn.executable("npm") == 1
+      }
+      servers.eslint = {}
+      servers.vue_ls = {}
+      servers.intelephense = {}
+    end
 
     mason.setup()
     mason_lspconfig.setup({
