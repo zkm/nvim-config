@@ -1,5 +1,13 @@
 # nvim-config
 
+[![CI](https://github.com/zkm/nvim-config/actions/workflows/ci.yml/badge.svg)](https://github.com/zkm/nvim-config/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+![Neovim 0.11+](https://img.shields.io/badge/Neovim-0.11%2B-57A143?logo=neovim&logoColor=white)
+![Lua](https://img.shields.io/badge/Lua-2C2D72?logo=lua&logoColor=white)
+![lazy.nvim](https://img.shields.io/badge/lazy.nvim-2E7DE9)
+![StyLua and Luacheck enforced](https://img.shields.io/badge/StyLua%20%2B%20Luacheck-enforced-5A5A5A)
+
 My personal Neovim configuration for Linux — full-featured IDE setup using lazy.nvim.
 
 ![Neovim screenshot](./Screenshot.png)
